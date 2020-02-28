@@ -1,0 +1,6 @@
+﻿{
+  "Values": {
+    "MyConnectionString": "AccountEndpoint=https://mifernacosmos.documents.azure.com:443/;AccountKey={someKey};"
+    
+  }
+}
