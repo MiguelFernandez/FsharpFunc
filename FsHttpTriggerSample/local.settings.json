@@ -1,6 +1,8 @@
 ﻿{
+  "IsEncrypted": false,
+  "UseDevelopmentStorage": true,
   "Values": {
-    "MyConnectionString": "AccountEndpoint=https://mifernacosmos.documents.azure.com:443/;AccountKey={someKey};"
-    
+    "MyConnectionString": "AccountEndpoint=https://mifernacosmos.documents.azure.com:443/;AccountKey=duMVleBGytX1QVu7MZNTBGW2prJYuAHgHSEtyTvra68U0hyzqT63sYFkPxiTZIJQrSTr3uhAtbgEHJIY6AOXSg==;"
+
   }
 }

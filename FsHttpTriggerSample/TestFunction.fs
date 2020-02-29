@@ -1,5 +1,17 @@
 namespace FsHttpTriggerSample
 
+open System.Collections.Generic
+open Microsoft.AspNetCore.Mvc
+open Microsoft.Azure.WebJobs
+open Microsoft.AspNetCore.Http
+open Newtonsoft.Json
+open Microsoft.Azure.WebJobs.Extensions
+open System.IO
+open Microsoft.Extensions.Logging
+open Microsoft.Azure.WebJobs.Extensions.Http
+open System
+ 
+
 
 
 type MyRecord = {
@@ -8,17 +20,12 @@ type MyRecord = {
   }
 
 module CosmosDbFunc = 
-
-    open Microsoft.AspNetCore.Mvc
-    open Microsoft.Azure.WebJobs
-    open Microsoft.AspNetCore.Http
-    open Microsoft.Azure.WebJobs.Extensions.Http
-    open System.Collections.Generic
-    
+   
+   
 
     [<FunctionName("CosmosDBSample")>]
-    let Run([<HttpTrigger(AuthorizationLevel.Anonymous, "get")>] req: HttpRequest,
-            [<CosmosDB("ToDoList","Items", ConnectionStringSetting = "MyConnectionString", SqlQuery = "SELECT top 2 * FROM c order by c._ts desc")>] documents: IEnumerable<MyRecord>) =
+    let Run([<HttpTrigger(AuthorizationLevel.Anonymous, "get")>] req: HttpRequest ,
+            [<CosmosDB("ToDoList","Items", ConnectionStringSetting = "MyConnectionString", SqlQuery = "SELECT top 2 * FROM c")>] documents: IEnumerable<MyRecord>) =
     
      OkObjectResult(documents)
      
